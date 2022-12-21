@@ -13,15 +13,15 @@ MusicFestival::MusicFestival(int max_price_in, std::list<Musician*> musicians_in
     this->total_price = 0;
     for (Musician* m: musicians_in)
     {
-        if (total_price + m->getPrice() <= max_price)
+        if (total_price + m->get_price() <= max_price)
         {
-            this->total_price += m->getPrice();
+            this->total_price += m->get_price();
             this->musicians.push_front(m);
 
-            std::cout << m->getName()  << " price - " << total_price << std::endl;
+            std::cout << m->get_name()  << " price - " << total_price << std::endl;
         } else 
         {
-            std::cout << m->getName() << " is too expensive!" << std::endl;
+            std::cout << m->get_name() << " is too expensive!" << std::endl;
         }
     }
 }
@@ -44,12 +44,12 @@ void MusicFestival::remove_musicians(std::string name)
 {
     for (Musician* m: musicians)
     {
-        if (m->getName() == name)
+        if (m->get_name() == name)
         {
-            this->total_price -= m->getPrice();
+            this->total_price -= m->get_price();
         }
     }
-    musicians.remove_if([name](Musician* musician) -> bool {return musician->getName() == name; });
+    musicians.remove_if([name](Musician* musician) -> bool {return musician->get_name() == name; });
 }
 
 void MusicFestival::print_musicians()
@@ -57,9 +57,9 @@ void MusicFestival::print_musicians()
     std::cout << "Printing Musicians" << std::endl;
     for (Musician* m: musicians)
     {
-        std::cout << "name - " << m->getName() << std::endl;
-        std::cout << "age - " << m->getAge() << std::endl;
-        std::cout << "price - " << m->getPrice() << std::endl << std::endl;
+        std::cout << "name - " << m->get_name() << std::endl;
+        std::cout << "age - " << m->get_age() << std::endl;
+        std::cout << "price - " << m->get_price() << std::endl << std::endl;
     }
     std::cout << "Total price - " << total_price << "$" << std::endl << std::endl;
 }

@@ -11,8 +11,8 @@ class Musician
     public:
         Musician();
         Musician(std::string name_in, int price_in, int age_in);
-        std::string getName();
-        int getAge();
-        int getPrice();
+        std::string get_name();
+        int get_age();
+        int get_price();
     
 };

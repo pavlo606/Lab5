@@ -15,17 +15,17 @@ Musician::Musician(std::string name_in, int price_in, int age_in)
     this->price = price_in;
 }
 
-int Musician::getAge()
+int Musician::get_age()
 {
     return age;
 }
 
-int Musician::getPrice()
+int Musician::get_price()
 {
     return price;
 }
 
-std::string Musician::getName()
+std::string Musician::get_name()
 {
     return name;
 }
